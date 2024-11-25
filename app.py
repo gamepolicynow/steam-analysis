@@ -7,10 +7,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from collections import defaultdict
 
-# 상위 디렉토리의 모듈을 import하기 위한 경로 설정
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from src.scraper.discussion_scraper import SteamDiscussionScraper
-from src.scraper.review_scraper import SteamReviewScraper
+# import 경로 수정
+from scraper.discussion_scraper import SteamDiscussionScraper
+from scraper.review_scraper import SteamReviewScraper
 
 def check_password():
     """비밀번호 확인 함수"""
@@ -405,7 +404,7 @@ def main():
                     if collect_reviews:
                         st.write("### 리뷰 분석")
                         
-                        # 추천 현황을 시각적으로 표시
+                        # 추천 현황을 시각���으로 표시
                         rec_data = review_analysis['recommendations']
                         st.write("#### 추천 현황")
                         
